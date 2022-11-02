@@ -5,12 +5,17 @@ import {
     FormLabel,
     FormErrorMessage,
     FormHelperText,
+    Input,
   } from '@chakra-ui/react'
 
+type Inputs = {
+    example: string,
+    exampleRequired: string,
+};
 
 export default function InputForm() {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit:SubmitHandler<Inputs> = data => console.log(data);
 
     console.log(watch("example")) // watch input value by passing the name of it
 
