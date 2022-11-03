@@ -1,0 +1,8 @@
+mutation CreateSong($createSongInput: CreateSongInput!) {
+    createSong(createSongInput: $createSongInput) {
+        title
+        bpm
+        instruments
+        sections
+    }
+}

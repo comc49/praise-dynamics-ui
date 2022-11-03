@@ -21,7 +21,6 @@ const client = new ApolloClient({
 // Set with credentials globally for sending req with the session cookie
 axios.defaults.withCredentials = true
 
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

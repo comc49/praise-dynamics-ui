@@ -8,22 +8,11 @@ import {
     Input,
   } from '@chakra-ui/react'
 
-type Inputs = {
-    example: string,
-    exampleRequired: string,
-};
-
-export default function InputForm() {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit:SubmitHandler<Inputs> = data => console.log(data);
-
-    console.log(watch("example")) // watch input value by passing the name of it
-
+export default function InputForm(props: any) {
     return (
         <FormControl>
-            <FormLabel>Email address</FormLabel>
-            <Input type='email' />
-            <FormHelperText>We'll never share your email.</FormHelperText>
+            <FormLabel>{props?.title}</FormLabel>
+            <Input required {...props?.register(props?.name)}/>
         </FormControl>
     );
 }
